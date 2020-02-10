@@ -2,7 +2,7 @@
 ### Ruby on Rails Project
 
 ### Roles
-* Overall Project Manager: Jon Foltz
+* Overall Project Manager: 
 * Coding Manager:
 * Testing Manager:
 * Documentation:
