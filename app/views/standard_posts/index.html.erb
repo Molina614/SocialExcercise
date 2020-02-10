@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Standard Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @standard_posts.each do |standard_post| %>
+      <tr>
+        <td><%= link_to 'Show', standard_post %></td>
+        <td><%= link_to 'Edit', edit_standard_post_path(standard_post) %></td>
+        <td><%= link_to 'Destroy', standard_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Standard Post', new_standard_post_path %>

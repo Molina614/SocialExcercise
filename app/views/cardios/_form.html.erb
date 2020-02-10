@@ -1,0 +1,28 @@
+<%= form_with(model: cardio, local: true) do |form| %>
+  <% if cardio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cardio.errors.count, "error") %> prohibited this cardio from being saved:</h2>
+
+      <ul>
+      <% cardio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%attrib = %i[reps set description name duration lap distance incline calories]%>
+<main class="ui centered">
+  <div class="ui form">
+      <%attrib.each do |attribute| %>
+        <div class="field">
+          <%= form.label attribute %>
+          <%= form.text_field attribute %>
+        </div>
+      <%end%>
+  </div>
+    <div class="actions">
+    <%= form.submit %>
+  </div>
+</main>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  username: one
+  actable_id: 298486374
+  actable_type: StandardPost
+
+two:
+  content: MyText
+  username: two
+  actable_id: 298486374
+  actable_type: GroupPost

@@ -1,0 +1,26 @@
+<div class="ui centered cards">
+  <div class="card">
+    <div class="content">
+      <div class="header"><%=post.user.username%></div>
+      <div class="meta"><%=post.created_at%></div>
+      <div class="description">
+        <%=post.content%>
+        <div class="ui celled list">
+          <%post.comments.each do |comment|%>
+            <div class="ui centered cards">
+            <div class="card">
+              <div class="content">
+                <div class="header"><%=comment.user.username%></div>
+                <div class="meta"><%=comment.created_at%></div>
+                <div class="description">
+                  <p><%=comment.content%></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

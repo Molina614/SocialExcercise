@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Liftings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @liftings.each do |lifting| %>
+      <tr>
+        <td><%= link_to 'Show', lifting %></td>
+        <td><%= link_to 'Edit', edit_lifting_path(lifting) %></td>
+        <td><%= link_to 'Destroy', lifting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lifting', new_lifting_path %>

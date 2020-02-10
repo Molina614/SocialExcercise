@@ -1,0 +1,28 @@
+<%= form_with(model: group_post, local: true) do |form| %>
+  <% if group_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(group_post.errors.count, "error") %> prohibited this group_post from being saved:</h2>
+      <ul>
+      <% group_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%attrib = %i[content]%>
+  <main class="centered">
+    <div class="ui form">
+      <div class="fields">
+        <%attrib.each do |attribute| %>
+          <div class="field">
+            <%= form.label attribute %>
+            <%= form.text_field attribute %>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </main>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

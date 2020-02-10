@@ -1,0 +1,25 @@
+<!-- Created 7/24/2019 by Gilberto Molina Badillo 
+     Description: workout card partial
+--> 
+<!-- NEED THIS IN THE PAGE TO CALL THIS
+<%= render :partial => 'workout_brief', :collection => @workouts %>
+--> 
+<div class="ui centered cards">
+    <div class="card">
+        <div class="content">
+            <div class="header"><%=workout.name%></div>
+            <div class="meta"><%=workout.created_at%></div>
+            <div class="description">
+                <div class="ui celled list">
+                    <%workout.exercises.each do |exercise|%>
+                        <div class="item">
+                            <div class="content">
+                                <div class="header"><%=exercise.name %></div>
+                            </div>
+                        </div>
+                    <%end%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

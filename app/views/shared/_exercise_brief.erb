@@ -1,0 +1,41 @@
+<!-- Created 7/24/2019 by Gilberto Molina Badillo 
+     Description: exercise card partial
+--> 
+<!-- NEED THIS IN THE PAGE TO CALL THIS
+<%= render :partial => 'exercise_brief', :collection => @exercises %>
+--> 
+<div class="ui centered cards">
+    <div class="card">
+        <div class="content">
+            <h1 class="ui header"><%=exercise.name%></h1>
+            <div class="meta"><%=exercise.author%></div>
+            <div class="description">
+                <%=exercise.description%>
+                <div class="ui celled list">
+                    <div class="item">
+                        <div class="content">
+                            <div class="header"> reps: <%= exercise.reps %> </div>
+                            <div class="header"> sets: <%= exercise.sets %> </div>
+                            <% if exercise.actable_type == "cardio"%>
+                                <% cardio =  Cardio.find_by(id: exercise.actable_id) %>
+                                <%if cardio%>
+                                    <%=<div class="header"> duration: cardio.duration </div> if cardio.duration > 0%>
+                                    <%=<div class="header"> laps: cardio.lap </div> if cardio.lap > 0%>
+                                    <%=<div class="header"> distance: cardio.distance </div> if cardio.distance > 0%>
+                                    <%=<div class="header"> incline: cardio.incline </div> if cardio.incline > 0%>
+                                <%end%>
+                            <% else%>
+                                <% lifting =  Lifting.find_by(id: exercise.actable_id) %>
+                                <%if lifting%>
+                                    <%=<div class="header"> weight: lifting.weight lbs</div> if lifting.weight > 0%>
+                                <%end%>
+                            <%exercise.muscles.each do |muscle|%>
+                                <div class="header"> muscle targeted: <%= muscle.group %> </div>
+                            <%end%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

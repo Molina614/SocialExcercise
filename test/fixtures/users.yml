@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+patrick:
+  name: patrick
+  gender: male
+  username: patrick
+  bio: nio
+  email: x@gmail.com
+  password: MyString123
+  age: 30
+
+sandy:
+  name: sandy
+  gender: female
+  username: arch
+  bio: MyString
+  email: arch@gmail.com
+  password: MyString123
+  age: 22

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calories: 9.99
+  duration: 18:42:29
+  lap: 1
+  distance: 9.99
+  incline: 9.99
+
+two:
+  calories: 9.99
+  duration: 18:42:29
+  lap: 1
+  distance: 9.99
+  incline: 9.99

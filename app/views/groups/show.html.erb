@@ -1,0 +1,19 @@
+<h1 class="ui header">@group.name</h1>
+<div class="tab">
+  <button class="tablinks" onclick="getInfo(event, 'memebers')">Members</button>
+  <button class="tablinks" onclick="getInfo(event, 'posts')">Posts</button>
+</div>
+<%@posts = Group_Post.where(group_id: @group.id)%>
+<%@users = []%>
+<%members = @group.members%>
+<%memebers.each do |user|%>
+  <%@users << User.find_by(username: user.username)%>
+<%end%>
+
+<div id="memebers" class="tabcontent">
+  <%= render :partial => 'shared/user_brief', :collection => @users %>
+</div>
+
+<div id="posts" class="tabcontent">
+  <%= render :partial => 'shared/post', :collection => @posts %>
+</div>

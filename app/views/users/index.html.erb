@@ -1,0 +1,40 @@
+<div id="user_info" class="ui unstackable items">
+  <div class="item">
+    <div class="content">
+      <a class="header"><%=current_user.name%></a>
+      <div class="meta">
+        <span>@<%=current_user.username%></span>
+      </div>
+      <div class="meta">
+        <span class="price"><%=current_user.gender%> , <%=current_user.age%></span>
+      </div>
+      <div class="extra">
+        <%=current_user.bio%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab">
+  <button class="tablinks" onclick="getInfo(event, 'posts')">Posts</button>
+  <button class="tablinks" onclick="getInfo(event, 'workouts')">Workouts</button>
+  <button class="tablinks" onclick="getInfo(event, 'followers')">Followers</button>
+  <button class="tablinks" onclick="getInfo(event, 'groups')">Groups</button>
+</div>
+<%@posts = Post.where(username: current_user.username)%>
+
+<div id="posts" class="tabcontent">
+  <%= render :partial => 'shared/post', :collection => @posts %>
+</div>
+
+<div id="workouts" class="tabcontent">
+  <%= render :partial => 'shared/workout_brief', :collection => @workouts %>
+</div>
+
+<div id="followers" class="tabcontent">
+  <%= render :partial => 'shared/follower_brief', :collection => @friends %>
+</div>
+
+<div id="groups" class="tabcontent">
+  <%= render :partial => 'shared/group_brief', :collection => @groups %>
+</div>

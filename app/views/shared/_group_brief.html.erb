@@ -1,0 +1,10 @@
+<div class="ui centered cards">
+    <div class="card">
+        <div class="content">
+        <% user.groups.each do |group| %>
+            <div class="header"><%=group.name%></div>
+            <div class="meta"><%=group.created_at%></div>
+        <% end %>
+        </div>
+    </div>
+</div>

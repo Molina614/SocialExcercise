@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Created 7/20/2019 by Kori Kuzma
+# Edited 7/21/2019 by Kori Kuzma: Made username unique
+one:
+  ranking: 1
+  username: 'kori'
+  group_id: 1
+
+two:
+  ranking: 1
+  username: 'kori'
+  group_id: 2

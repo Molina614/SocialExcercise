@@ -1,0 +1,33 @@
+# Created 7/23/2019 by Kori Kuzma
+# Description: Creates Profile page
+
+# Description: Displays name, username, gender, age, and bio
+<div class="ui unstackable items">
+  <div class="item">
+    <div class="content">
+      <a class="header">@user.name</a>
+      <div class="meta">
+        <span>@user.username</span>
+      </div>
+      <div class = "meta">
+        <span class="price">@user.gender, @user.age</span>
+      </div>
+      <div class="extra">
+        @user.bio
+      </div>
+    </div>
+  </div>
+</div>
+
+# Description: Tabs that will display the following
+<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="first">Post</a>
+  <a class="item" data-tab="second">Workouts</a>
+</div>
+
+<div class="ui bottom attached tab segment active" data-tab="first">
+  Posts
+</div>
+<div class="ui bottom attached tab segment" data-tab="second">
+  Workouts
+</div>

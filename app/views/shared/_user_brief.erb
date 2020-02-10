@@ -1,0 +1,13 @@
+<div class="ui centered cards">
+    <div class="card">
+        <div class="content">
+            <%= users.followers.each do |user| %>
+                <div class="header"><%=user.name%></div>
+                <div class="meta"><%=user.username %></div>
+                <div class="description">
+                    <%=user.bio%>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>
